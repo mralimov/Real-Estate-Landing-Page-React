@@ -10,9 +10,9 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  padding: 3rem calc((100vw - 1300px) / 2);
+  padding: calc((100vw - 1300px) / 2);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 800px;
 
   @media screen and (max-width 768px) {
@@ -24,30 +24,38 @@ const ColumnLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1.4;
-  padding: 1rem 2rem;
+  padding: 4rem 2rem;
   order: ${({ reverse }) => (reverse ? '2' : '1')};
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
 
   p {
     margin-bottom: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  p:nth-of-type(2) {
+    margin-bottom: 5rem;
   }
 `;
 
 const ColumnRight = styled.div`
   padding: 1rem 2rem;
-  order: ${({ reverse }) => (reverse ? '2' : '1')};
   display: flex;
-  justify-content: center;
   align-items: center;
+  order: ${({ reverse }) => (reverse ? '2' : '1')};
 
   @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
     order: ${({ reverse }) => (reverse ? '2' : '1')};
+    & {
+      margin-top: -10rem;
+    }
   }
 
   img {
@@ -58,6 +66,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px) {
       width: 90%;
       height: 90%;
+      margin: auto;
     }
   }
 `;

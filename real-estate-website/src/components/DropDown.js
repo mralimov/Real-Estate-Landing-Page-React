@@ -41,6 +41,8 @@ const DropdownMenu = styled.div`
   grid-template-column: 1fr;
   grid-template-rows: repeat(4, 80px);
   text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 4rem;
 
   @media screen and (max-width: 480px) {
@@ -51,11 +53,12 @@ const DropdownMenu = styled.div`
 const DropdownLink = styled(Link)`
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   color: #fff;
   font-size: 1.5rem;
+  font-weight: 500;
   text-decoration: none;
-  list-style: none;
   cursor: pointer;
   transition: 0.2 ease-in-out;
 
