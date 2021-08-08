@@ -61,22 +61,22 @@ const NavMenu = styled.div`
 
 const NavMenuLinks = styled(Link)`
   ${NavLink}
-  color: #fff;
 `;
 
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
+  margin-right: 24px;
 
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <Nav>
       <Logo>REMAX</Logo>
-      <MenuBars />
+      <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, i) => (
           <NavMenuLinks key={item.title} to={item.link}>

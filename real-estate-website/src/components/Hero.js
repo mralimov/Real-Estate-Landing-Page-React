@@ -73,6 +73,7 @@ const HeroContent = styled.div`
   max-width: 1600px;
   width: calc(100% - 100px);
   color: #fff;
+  //   padding-left: 6rem;
 
   h1 {
     font-size: clamp(1rem, 8vw, 2rem);
@@ -95,6 +96,7 @@ const SliderButtons = styled.div`
   right: 50px;
   displat: flex;
   z-index: 10;
+  cursor: pointer;
 `;
 
 const Arrow = styled(IoMdArrowRoundForward)`
