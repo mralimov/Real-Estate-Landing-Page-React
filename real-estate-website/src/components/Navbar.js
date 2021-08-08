@@ -14,7 +14,6 @@ const Nav = styled.nav`
   z-index: 100;
   position: fixed;
   width: 100%;
-  background: #000;
 `;
 
 const NavLink = css`
@@ -31,10 +30,11 @@ const Logo = styled(Link)`
   ${NavLink}
   color: #ffff;
   font-style: italic;
-  font-size: 2rem;
 `;
 
 const MenuBars = styled.i`
+  display: none;
+
   @media screen and (max-width: 768px) {
     display: block;
     background-image: url(${Bars});
@@ -62,7 +62,6 @@ const NavMenu = styled.div`
 const NavMenuLinks = styled(Link)`
   ${NavLink}
   color: #fff;
-  font-size: 1.6rem;
 `;
 
 const NavBtn = styled.div`
