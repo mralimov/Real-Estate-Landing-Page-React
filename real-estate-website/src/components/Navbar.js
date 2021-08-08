@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
+import '../index.css';
 import Bars from '../images/bars.svg';
-// import { FaBars } from 'react-icons/fa';
+import { RiMenu3Line } from 'react-icons/ri';
 
 const Nav = styled.nav`
   height: 60px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 100;
@@ -28,24 +30,29 @@ const NavLink = css`
 
 const Logo = styled(Link)`
   ${NavLink}
-  color: #ffff;
   font-style: italic;
 `;
 
-const MenuBars = styled.i`
+const MenuBars = styled(RiMenu3Line)`
   display: none;
 
   @media screen and (max-width: 768px) {
     display: block;
-    background-image: url(${Bars});
-    background-size: contain;
+    color: #ffff;
+    // background-image: url(${Bars});
+    // background-size: contain;
     height: 40px;
     width: 40px;
     cursor: pointer;
-    //     position: absolute;
+    position: absolute;
     top: 0;
     rigth: 0;
+    transition: 0.3s;
     transform: tranlate(-50%, 25%);
+
+    &:hover {
+      color: #cd853f;
+    }
   }
 `;
 
@@ -63,23 +70,42 @@ const NavMenuLinks = styled(Link)`
   ${NavLink}
 `;
 
+const ActiveNav = css`
+  background-color: #cd853f;
+`;
+
 const NavBtn = styled.div`
   display: flex;
   align-items: center;
+  justify-items: center;
   margin-right: 24px;
 
   @media screen and (max-width: 768px) {
     display: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    height: 40px;
+    width: 44px;
   }
 `;
 const Navbar = ({ toggle }) => {
+  const [navBar, setNavbar] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener('scroll', changeBackground);
+
   return (
-    <Nav>
-      <Logo>REMAX</Logo>
+    <Nav className={navBar ? `navbar active` : `navbar`}>
+      <Logo to='/'>REMAX</Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, i) => (
-          <NavMenuLinks key={item.title} to={item.link}>
+          <NavMenuLinks key={i} to={item.link}>
             {item.title}
           </NavMenuLinks>
         ))}
