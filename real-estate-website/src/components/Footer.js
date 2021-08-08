@@ -34,7 +34,7 @@ const Footer = ({ footerData }) => {
       <Section>
         <Container>
           {footerData.map((item, index) => (
-            <FooterBlock>
+            <FooterBlock key={index}>
               <h4>{item.title}</h4>
               <ul>
                 {item.links.map((link, key) => (

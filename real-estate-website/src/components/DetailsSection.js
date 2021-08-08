@@ -63,8 +63,8 @@ const DetailsSection = ({ cards }) => {
         <Container>
           {cards.map((card, index) => {
             return (
-              <Card>
-                <img src={card.image} key={index} alt='House Style' />
+              <Card key={index}>
+                <img src={card.image} alt='House Style' />
                 <CardContent>
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
