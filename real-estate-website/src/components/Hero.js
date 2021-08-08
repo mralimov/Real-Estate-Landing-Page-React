@@ -3,10 +3,11 @@ import styled, { css } from 'styled-components/macro';
 import { Button } from './Button';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
+import { RiSlideshow2Fill } from 'react-icons/ri';
 
 const HeroSection = styled.section`
   height: 100vh;
-  //   max-height: 110px;
+  // max-height: 110px;
   position: relative;
   overflow: hidden;
 `;
@@ -44,7 +45,6 @@ const HeroSlider = styled.div`
     width: 100%;
     height: 100vh;
     bottom: 0vh;
-    left: 0;
     overflow: hidden;
     opacity: 0.4;
     background: linear-gradient(
@@ -63,6 +63,7 @@ const HeroImage = styled.img`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  transition: 0.1s ease;
 `;
 
 const HeroContent = styled.div`
@@ -73,11 +74,11 @@ const HeroContent = styled.div`
   max-width: 1600px;
   width: calc(100% - 100px);
   color: #fff;
-  //   padding-left: 6rem;
+  padding-right: 1.5rem;
 
   h1 {
     font-size: clamp(1rem, 8vw, 2rem);
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     text-align: left;
@@ -88,19 +89,24 @@ const HeroContent = styled.div`
     margin-bottom: 1.2rem;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
+
+  @media screen and (max-width: 660px) {
+    & {
+      padding-left: 2rem;
+    }
+  }
 `;
 
 const SliderButtons = styled.div`
   position: absolute;
   bottom: 50px;
   right: 50px;
-  displat: flex;
+  display: flex;
   z-index: 10;
-  cursor: pointer;
 `;
 
 const Arrow = styled(IoMdArrowRoundForward)`
-  margin-left: 0.5rem;
+  margin-left: 5px;
 `;
 
 const arrowButtons = css`
@@ -109,9 +115,9 @@ height: 50px;
 color: #fff;
 cursor: pointer;
 background: #000d1a;
-border-radius: 50px;
+border-radius: 50%;
 padding: 10px;
-margin-rigth: 1rem;
+margin-right: 1rem;
 user-select: none;
 transition: 0.3s;
 
@@ -133,24 +139,12 @@ const Hero = ({ slides }) => {
   const length = slides.length;
   const timeout = useRef(null);
 
-  //   useEffect(() => {
-  //     const nextSlide = () => {
-  //       setCurrentSlide((current) => (current === length - 1 ? 0 : current + 1));
-  //     };
-  //     timeout.current = setTimeout(nextSlide, 3000);
-  //     return function () {
-  //       if (timeout.current) {
-  //         clearTimeout(timeout.current);
-  //       }
-  //     };
-  //   }, [currentSlide, length]);
-
   const nextSlide = () => {
+    setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
+    console.log(currentSlide);
     if (timeout.current) {
       clearTimeout(timeout.current);
     }
-    setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
-    console.log(currentSlide);
   };
 
   const prevSlide = () => {
@@ -160,6 +154,18 @@ const Hero = ({ slides }) => {
     setCurrentSlide(currentSlide === 0 ? length - 1 : currentSlide - 1);
     console.log(currentSlide);
   };
+
+  useEffect(() => {
+    const nextSlide = () => {
+      setCurrentSlide((current) => (current === length - 1 ? 0 : current + 1));
+    };
+    timeout.current = setTimeout(nextSlide, 3000);
+    return function () {
+      if (timeout.current) {
+        clearTimeout(timeout.current);
+      }
+    };
+  }, [currentSlide, length]);
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
@@ -180,7 +186,8 @@ const Hero = ({ slides }) => {
                       to={slide.path}
                       primary='true'
                       css={`
-                        max-width: 16rem;
+                        max-width: 160px;
+                        cursor: pointer;
                       `}
                     >
                       {slide.label}
@@ -193,8 +200,8 @@ const Hero = ({ slides }) => {
           );
         })}
         <SliderButtons>
-          <PrevArrow onClick={nextSlide} />
-          <NextArrow onClick={prevSlide} />
+          <PrevArrow onClick={prevSlide} />
+          <NextArrow onClick={nextSlide} />
         </SliderButtons>
       </HeroWrapper>
     </HeroSection>
