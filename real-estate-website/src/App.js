@@ -1,7 +1,9 @@
 import { Fragment, useState } from 'react';
 import DropDown from './components/DropDown';
 import Hero from './components/Hero';
+import InfoSection from './components/InfoSection';
 import Navbar from './components/Navbar';
+import { ContenData } from './data/ContentData';
 import { SliderData } from './data/SliderData';
 import GlobalStyle from './globalSyle';
 
@@ -12,12 +14,13 @@ function App() {
     setIsOpen(!isOpen);
   };
   return (
-    <Fragment>
+    <>
       <GlobalStyle />
       <Navbar toggle={toggle} />
       <DropDown isOpen={isOpen} toggle={toggle} />
       <Hero slides={SliderData} />
-    </Fragment>
+      <InfoSection {...ContenData} />
+    </>
   );
 }
 

@@ -84,7 +84,7 @@ const DropDown = ({ isOpen, toggle }) => {
           ))}
         </DropdownMenu>
         <BtnWrap>
-          <Button primaty='true' round='true' big='true' to='/contact'>
+          <Button primary='true' round='true' big='true' to='/contact'>
             Contact Us
           </Button>
         </BtnWrap>
