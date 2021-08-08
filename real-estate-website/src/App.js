@@ -1,10 +1,11 @@
 import Navbar from './components/Navbar';
-
+import GlobalStyle from './globalSyle';
 function App() {
   return (
-    <div className='App'>
+    <>
+      <GlobalStyle />
       <Navbar />
-    </div>
+    </>
   );
 }
 
