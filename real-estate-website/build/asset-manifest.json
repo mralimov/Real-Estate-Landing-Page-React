@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/static/js/main.72228e01.chunk.js",
+    "main.js.map": "/static/js/main.72228e01.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ad3774e5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ad3774e5.js.map",
+    "static/css/2.7fc9bc2b.chunk.css": "/static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.04c0f6af.chunk.js": "/static/js/2.04c0f6af.chunk.js",
+    "static/js/2.04c0f6af.chunk.js.map": "/static/js/2.04c0f6af.chunk.js.map",
+    "static/js/3.a08472a7.chunk.js": "/static/js/3.a08472a7.chunk.js",
+    "static/js/3.a08472a7.chunk.js.map": "/static/js/3.a08472a7.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7fc9bc2b.chunk.css.map": "/static/css/2.7fc9bc2b.chunk.css.map",
+    "static/js/2.04c0f6af.chunk.js.LICENSE.txt": "/static/js/2.04c0f6af.chunk.js.LICENSE.txt",
+    "static/media/House1.25d7d138.jpg": "/static/media/House1.25d7d138.jpg",
+    "static/media/House2.7af50cfa.jpg": "/static/media/House2.7af50cfa.jpg",
+    "static/media/House3.d46754e9.jpg": "/static/media/House3.d46754e9.jpg",
+    "static/media/House4.a6a5216c.jpg": "/static/media/House4.a6a5216c.jpg",
+    "static/media/House5.87bb786d.jpg": "/static/media/House5.87bb786d.jpg",
+    "static/media/House6.cd5032c2.jpg": "/static/media/House6.cd5032c2.jpg",
+    "static/media/House7.74d6e605.jpg": "/static/media/House7.74d6e605.jpg",
+    "static/media/bars.5a00a69e.svg": "/static/media/bars.5a00a69e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad3774e5.js",
+    "static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.04c0f6af.chunk.js",
+    "static/js/main.72228e01.chunk.js"
+  ]
+}
