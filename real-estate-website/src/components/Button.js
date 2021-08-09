@@ -5,10 +5,10 @@ export const Button = styled(Link)`
   background: ${({ primary }) => (primary ? '#000d1a' : 'CD853F')};
   white-space: nowrap;
   outline: none;
+  border: none;
   border: 2px solid transparent;
   min-width: 100px;
   max-width: 200px;
-  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s;
@@ -18,11 +18,10 @@ export const Button = styled(Link)`
   padding: ${({ big }) => (big ? '16px 20px' : '14px 24px')};
   color: ${({ primary }) => (primary ? '#fff' : '#000d1a')};
   font-size: ${({ big }) => (big ? '20px' : '14px')};
+  border-radius: ${({ round }) => (round ? '50px' : '0px')}
 
   &:hover {
-    color: #000d1a;
-    border: 2px solid #cd853f;
-    background-color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+       transform: translateY(-2px);
+
   }
 `;
