@@ -1,7 +1,7 @@
 import House6 from '../images/House6.jpg';
 import House7 from '../images/House7.jpg';
 
-export const ContenData = {
+export const ContentData = {
   heading: 'Explore our beautiful homes',
   paragraphOne:
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, repellendus accusantium quis modi consequatur atque molestiae. Corporis sit quos veritatis? ',
@@ -13,7 +13,7 @@ export const ContenData = {
   delay: 100,
 };
 
-export const ContenDataTwo = {
+export const ContentDataTwo = {
   heading: 'Modern Designed homes',
   paragraphOne:
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, repellendus accusantium quis modi consequatur atque molestiae. Corporis sit quos veritatis? ',

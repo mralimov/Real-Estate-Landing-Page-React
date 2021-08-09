@@ -5,6 +5,32 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
+const DropDown = ({ isOpen, toggle }) => {
+  return (
+    <DropdownContainer isOpen={isOpen} onClick={toggle}>
+      <Icon onClick={toggle}>
+        <CloseIcon />
+      </Icon>
+      <DropdownWrapper>
+        <DropdownMenu>
+          {menuData.map((menu, i) => (
+            <DropdownLink to={menu.link} key={i}>
+              {menu.title}
+            </DropdownLink>
+          ))}
+        </DropdownMenu>
+        <BtnWrap>
+          <Button primary='true' round='true' big='true' to='/contact'>
+            Contact Us
+          </Button>
+        </BtnWrap>
+      </DropdownWrapper>
+    </DropdownContainer>
+  );
+};
+
+export default DropDown;
+
 const DropdownContainer = styled.div`
   position: fixed;
   z-index: 999;
@@ -16,14 +42,14 @@ const DropdownContainer = styled.div`
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')}; ;
 `;
 
 const Icon = styled.div`
   position: absolute;
   top: 1.2rem;
-  rigth: 1.5rem;
+  right: 1.5rem;
   background: transparent;
   font-size: 2rem;
   cursor: pointer;
@@ -71,29 +97,3 @@ const BtnWrap = styled.div`
   display: flex;
   justify-content: center;
 `;
-
-const DropDown = ({ isOpen, toggle }) => {
-  return (
-    <DropdownContainer isOpen={isOpen} onClick={toggle}>
-      <Icon onClick={toggle}>
-        <CloseIcon />
-      </Icon>
-      <DropdownWrapper>
-        <DropdownMenu>
-          {menuData.map((menu, i) => (
-            <DropdownLink to={menu.link} key={i}>
-              {menu.title}
-            </DropdownLink>
-          ))}
-        </DropdownMenu>
-        <BtnWrap>
-          <Button primary='true' round='true' big='true' to='/contact'>
-            Contact Us
-          </Button>
-        </BtnWrap>
-      </DropdownWrapper>
-    </DropdownContainer>
-  );
-};
-
-export default DropDown;
