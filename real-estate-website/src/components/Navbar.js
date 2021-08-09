@@ -96,7 +96,7 @@ const MenuBars = styled.i`
     height: 40px;
     width: 40px;
     cursor: pointer;
-    position: absolute;
+    // position: absolute;
     top: 0;
     rigth: 0;
     transform: tranlate(-50%, 25%);
